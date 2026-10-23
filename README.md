@@ -1,6 +1,6 @@
 # Cedar & Sage Hair Studio
 
-Static site (HTML and CSS only, no build step, no JavaScript, no third-party requests).
+Static site (a single `index.html` with inline CSS, no build step, no JavaScript, no third-party requests).
 Deploy the repo root to Cloudflare Pages with no build command.
 
 ## Facts used (from the owner)
@@ -10,7 +10,8 @@ Deploy the repo root to Cloudflare Pages with no build command.
 
 ## Still to fill in (yellow `[brackets]` on the page)
 - About text, real services and prices, booking link, and real reviews on the reviews section of `index.html` (placeholders only; never invent reviews)
-- Google rating block in the reviews section is hidden: set `--rating-whole`, `--rating-tenth`, `--review-count` in `styles.css` (`.reviews-home`), then remove `hidden` in `index.html`
+- Google rating block in the reviews section is hidden: set `--rating-whole`, `--rating-tenth`, `--review-count` in the `<style>` block of `index.html` (`.reviews-home`), then remove `hidden` in `index.html`
 - Photos (with alt text), once the owner supplies them
 - Remove the `noindex` meta tag in `index.html` before launch
 - Turn on Always Use HTTPS in Cloudflare after connecting the domain
+- If you edit the CSS in `index.html`, update the `style-src` sha256 hash in `_headers` to match (the CSP blocks inline styles otherwise)

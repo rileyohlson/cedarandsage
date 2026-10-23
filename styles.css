@@ -17,7 +17,16 @@ a:focus-visible, .button:focus-visible { outline: 3px solid var(--cedar); outlin
 .brand { font-size: 1.35rem; font-weight: 700; color: var(--cedar); text-decoration: none; }
 .brand span { color: var(--sage-dark); font-weight: 400; }
 .top-links a { margin-left: var(--s2); text-decoration: none; }
-.hero { padding-top: var(--s5); padding-bottom: var(--s5); }
+.hero { padding-top: var(--s4); padding-bottom: var(--s5); display: grid; gap: var(--s4); align-items: center; }
+@media (min-width: 48rem) { .hero { grid-template-columns: 1.1fr 1fr; } .split { grid-template-columns: 1fr 1.2fr; } }
+.photo { background: repeating-linear-gradient(135deg, #e4eadf, #e4eadf 14px, #dbe3d5 14px, #dbe3d5 28px); border: 2px dashed var(--sage); border-radius: 1rem; min-height: 14rem; display: grid; place-items: center; text-align: center; color: var(--sage-dark); font-size: .95rem; }
+.photo.tall { min-height: 24rem; border-radius: 12rem 12rem 1rem 1rem; }
+.photo small { opacity: .8; }
+.split { display: grid; gap: var(--s3); align-items: center; }
+.band { background: #ebe5d8; padding: var(--s4) 0; }
+.gallery { display: grid; gap: var(--s2); grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); }
+.gallery .photo { aspect-ratio: 1; min-height: 0; }
+.num { display: block; font-size: .85rem; letter-spacing: .15em; color: var(--sage); margin-bottom: var(--s1); }
 .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .85rem; color: var(--sage-dark); margin: 0; }
 h1 { font-size: clamp(2rem, 6vw, 3.25rem); line-height: 1.15; color: var(--cedar); margin: var(--s1) 0 var(--s2); }
 h2 { color: var(--cedar); font-size: 1.75rem; margin: 0 0 var(--s2); }
@@ -26,8 +35,30 @@ h3 { margin: 0 0 var(--s1); color: var(--sage-dark); }
 .button { display: inline-block; background: var(--sage-dark); color: #fff; padding: .75rem 1.5rem; border-radius: 999px; text-decoration: none; }
 .block { padding-top: var(--s4); padding-bottom: var(--s4); border-top: 1px solid #ddd5c6; }
 .cards { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
-.cards li { background: #fff; border-radius: .5rem; padding: var(--s3); }
+.cards li { background: #fff; border-radius: 1rem; border-top: 4px solid var(--sage); padding: var(--s3); }
 .cards p { margin: 0; }
 address { font-style: normal; }
 .ph { background: #fff3a8; padding: 0 .2em; }
 .foot { padding-top: var(--s3); padding-bottom: var(--s4); font-size: .9rem; color: #5b544c; }
+
+/* Motion: gentle and smooth. Switched off for people who ask for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  @keyframes rise { from { opacity: 0; transform: translateY(1.25rem); } to { opacity: 1; transform: none; } }
+  @keyframes drift { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+  .hero-text > * { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+  .hero-text > :nth-child(2) { animation-delay: .1s; }
+  .hero-text > :nth-child(3) { animation-delay: .2s; }
+  .hero-text > :nth-child(4) { animation-delay: .3s; }
+  .hero .photo { animation: drift 1.2s cubic-bezier(.2,.7,.2,1) .15s both; }
+  .button, .cards li, .photo, .top-links a { transition: transform .35s ease, box-shadow .35s ease, background-color .35s ease, color .35s ease; }
+  .button:hover { transform: translateY(-2px); background: var(--cedar); box-shadow: 0 .5rem 1rem rgba(42,38,34,.18); }
+  .cards li:hover, .gallery .photo:hover { transform: translateY(-4px); box-shadow: 0 .75rem 1.5rem rgba(42,38,34,.12); }
+  .top-links a:hover { color: var(--cedar); }
+  /* Fade in on scroll where the browser supports it; other browsers just show the content. */
+  @supports (animation-timeline: view()) {
+    .block h2, .block p, .cards li, .split > *, .gallery .photo, .band h2 {
+      animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 45%;
+    }
+  }
+}

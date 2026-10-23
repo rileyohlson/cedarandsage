@@ -84,11 +84,11 @@ blockquote { margin: 0 0 var(--s2); font-size: 1.1rem; font-style: italic; }
 .who { font-size: .9rem; color: #5b544c; }
 
 /* Google rating. Change --rating-whole, --rating-tenth and --review-count to match the Google listing. */
-@property --w { syntax: "<integer>"; initial-value: 0; inherits: false; }
-@property --t { syntax: "<integer>"; initial-value: 0; inherits: false; }
-@property --c { syntax: "<integer>"; initial-value: 0; inherits: false; }
+@property --w { syntax: "<integer>"; initial-value: 0; inherits: true; }
+@property --t { syntax: "<integer>"; initial-value: 0; inherits: true; }
+@property --c { syntax: "<integer>"; initial-value: 0; inherits: true; }
 @property --fill { syntax: "<percentage>"; initial-value: 0%; inherits: false; }
-.reviews-home { --rating-whole: 0; --rating-tenth: 0; --review-count: 0; }
+.reviews-home { --rating-whole: 5; --rating-tenth: 0; --review-count: 1; }
 .rating { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3); margin-bottom: var(--s2); }
 .stars { position: relative; font-size: 2.5rem; line-height: 1; letter-spacing: .1em; }
 .stars-back { color: #d8d0c0; }
@@ -164,6 +164,41 @@ html, body { overflow-x: clip; }
   @supports (animation-timeline: view()) { .logo-band img { animation: fadein linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; } }
 }
 img.photo.tall { image-rendering: auto; }
+
+/* Modern refresh: cleaner type, softer surfaces, more space */
+:root { --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; --serif: Georgia, "Times New Roman", serif; }
+body { font-family: var(--sans); font-size: 1.0625rem; line-height: 1.7; background: linear-gradient(180deg, #fbf8f2 0, var(--cream) 40rem); -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 64rem; padding: 0 var(--s3); }
+h1, h2, h3, .brand, blockquote { font-family: var(--serif); }
+h1 { font-size: clamp(2.4rem, 7vw, 4.25rem); line-height: 1.08; letter-spacing: -.02em; }
+h2 { font-size: clamp(1.75rem, 4vw, 2.4rem); letter-spacing: -.01em; }
+.eyebrow { display: inline-block; padding: .3rem .85rem; border-radius: 999px; background: rgba(124,143,120,.16); letter-spacing: .14em; font-size: .75rem; font-weight: 600; }
+.lead { font-size: 1.3rem; color: #4a433c; }
+.top-bar { background: rgba(251,248,242,.78); }
+.brand { letter-spacing: -.01em; }
+.top-links a { font-size: .95rem; font-weight: 500; color: var(--ink); margin-left: var(--s3); }
+.hero { padding-top: var(--s5); padding-bottom: calc(var(--s5) + 1rem); gap: var(--s5); }
+.button { padding: .9rem 1.9rem; font-weight: 600; letter-spacing: .01em; background: linear-gradient(135deg, var(--sage-dark), #3d4e3a); box-shadow: 0 .6rem 1.4rem rgba(75,94,72,.28); }
+.frame img.photo, img.photo.tall { border-radius: 14rem 14rem 1.5rem 1.5rem; }
+.block { border-top: 0; padding-top: var(--s5); padding-bottom: var(--s5); }
+.band { background: linear-gradient(180deg, #efe9dc, #e9e2d3); padding: var(--s5) 0; }
+.cards { gap: var(--s3); }
+.cards li { border-top: 0; border-radius: 1.25rem; padding: var(--s4) var(--s3) var(--s3); box-shadow: 0 .1rem .25rem rgba(42,38,34,.04), 0 1rem 2.25rem rgba(42,38,34,.07); position: relative; }
+.num { font-family: var(--serif); font-size: 1.1rem; letter-spacing: .1em; color: var(--sage-dark); }
+.photo { border-radius: 1.25rem; }
+.hours { width: 100%; max-width: 28rem; background: #fff; border-radius: 1.25rem; padding: var(--s2) var(--s3); box-shadow: 0 1rem 2.25rem rgba(42,38,34,.07); }
+.hours th, .hours td { padding: .55rem var(--s2) .55rem 0; }
+.hours tr:last-child th, .hours tr:last-child td { border-bottom: 0; }
+.reviews-home .rating { padding: var(--s3); background: #fff; border-radius: 1.25rem; width: fit-content; box-shadow: 0 1rem 2.25rem rgba(42,38,34,.07); }
+.reviews-home .score { line-height: 1.4; }
+.reviews .cards li, .cards.reviews li { max-width: 40rem; }
+.cards.reviews blockquote { font-size: 1.35rem; line-height: 1.5; font-style: normal; color: var(--cedar); }
+.cards.reviews li::before { content: "\201C"; position: absolute; top: .25rem; left: var(--s3); font: 4rem/1 var(--serif); color: var(--sage); opacity: .5; }
+.cards.reviews blockquote { padding-top: var(--s2); }
+.cards.reviews .who { font-weight: 600; }
+.logo-band { padding: var(--s5) var(--s2); }
+.foot { text-align: center; padding-top: var(--s4); }
+@media (max-width: 40rem) { .top-links a { margin-left: var(--s2); } .hero { padding-top: var(--s4); gap: var(--s4); } }
   </style>
   <script type="application/ld+json">
   {
@@ -244,21 +279,18 @@ img.photo.tall { image-rendering: auto; }
 
         <section id="reviews" class="wrap block reviews-home">
       <h2>What our clients say</h2>
-      <!-- Rating block is hidden until the real Google rating and review count are set in styles.css (.reviews-home) and the hidden attribute is removed. -->
-      <div class="rating" hidden>
-        <div class="stars" role="img" aria-label="Google star rating">
+      <!-- Google rating: 5.0 out of 5 from 1 review. Update --rating-whole, --rating-tenth and --review-count in the CSS (.reviews-home) and the word "review" below if these change. -->
+      <div class="rating">
+        <div class="stars" role="img" aria-label="5 out of 5 stars">
           <span class="stars-back" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
           <span class="stars-fill" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         </div>
         <p class="score"><span class="num-rating"></span> out of 5 on Google<br>
-          from <span class="num-count"></span> reviews</p>
+          from <span class="num-count"></span> review</p>
       </div>
       <ul class="cards reviews">
-        <li><blockquote class="ph">[Review text, copied word for word from the client's own review]</blockquote><p class="who ph">[Client first name, and where the review was posted]</p></li>
-        <li><blockquote class="ph">[Review text]</blockquote><p class="who ph">[Client first name, and where the review was posted]</p></li>
-        <li><blockquote class="ph">[Review text]</blockquote><p class="who ph">[Client first name, and where the review was posted]</p></li>
+        <li><blockquote>Kara did an amazing job on my hair today! Thank you, I love it what you have done!</blockquote><p class="who">Google review</p></li>
       </ul>
-      <p class="note"><span class="ph">[Only add reviews clients have really written, with their OK. Link to the salon's Google reviews once confirmed.]</span></p>
     </section>
 
     <section id="visit" class="wrap block">

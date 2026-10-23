@@ -6,10 +6,17 @@
    commas and curly brackets exactly as they are.
    ========================================================================== */
 const SITE = {
+  // The salon's name, used in the legal pages and the footer.
+  name: 'Cedar & Sage Hair Studio',
+
   // Phone number shown on the page, and the same number for the tap-to-call link.
   // The link has no spaces or brackets: +61 then the number without its first 0.
   phoneDisplay: '(02) 6921 1513',
   phoneLink: 'tel:+61269211513',
+
+  // The salon's ABN (Australian Business Number). Leave as '' until the real number is known.
+  // It only shows in the footer when filled in, for example: abn: '12 345 678 901',
+  abn: '',
 
   // Shown in the Visit section and the FAQ.
   address: '135 Docker St, Wagga Wagga NSW 2650',
@@ -106,7 +113,12 @@ const SITE = {
 
   /* ---- Plain details: phone, address, social links ---- */
   function bindDetails() {
+    var yearEl = $('#foot-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+    var abnEl = $('#foot-abn');
+    if (abnEl && SITE.abn) { abnEl.textContent = 'ABN ' + SITE.abn; abnEl.hidden = false; }
     var text = {
+      name: SITE.name,
       phoneDisplay: SITE.phoneDisplay,
       address: SITE.address,
       instagramHandle: SITE.social.instagramHandle
@@ -224,8 +236,7 @@ const SITE = {
       SITE.gallery.forEach(function (g, i) {
         var b = el('button', 'tile');
         b.type = 'button';
-        b.setAttribute('aria-label', 'View larger: ' + g.alt);
-        var img = el('img'); img.src = g.src; img.alt = ''; img.loading = 'lazy'; img.width = 700; img.height = 525;
+        var img = el('img'); img.src = g.src; img.alt = g.alt; img.loading = 'lazy'; img.width = 700; img.height = 525;
         b.appendChild(img);
         b.addEventListener('click', function () { openBox(i, b); });
         grid.appendChild(b);

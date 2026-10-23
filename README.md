@@ -8,7 +8,7 @@ Open `script.js`. The `SITE` object at the very top holds the phone number, addr
 ## Before it goes live
 - Replace the placeholder prices in `SITE.services` with the salon's real price list.
 - The gallery photos are free stock photos from Unsplash. Swap them for the salon's own work when available.
-- Remove the `noindex` meta tag in `index.html` when the owner approves the site.
+- See `LAUNCH_NOTES.md` for everything to change before going live (noindex, prices, images, legal review, domain).
 - Turn on Always Use HTTPS in Cloudflare after connecting the domain.
 - The structured data (JSON-LD) in the `<head>` of `index.html` repeats the phone and hours for search engines, so update it if those change.
 

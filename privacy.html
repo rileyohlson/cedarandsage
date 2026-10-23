@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy | Cedar &amp; Sage Hair Studio</title>
+  <meta name="description" content="How Cedar &amp; Sage Hair Studio handles personal information in connection with this website.">
+  <!-- DEMO ONLY: remove this line when the site launches on the salon's own domain -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cedar &amp; Sage Hair Studio">
+  <meta property="og:title" content="Privacy Policy | Cedar &amp; Sage Hair Studio">
+  <meta property="og:description" content="How Cedar &amp; Sage Hair Studio handles personal information in connection with this website.">
+  <meta property="og:image" content="images/hero.jpg">
+  <meta property="og:image:alt" content="A stylist blow drying a client's wavy hair with a round brush">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy Policy | Cedar &amp; Sage Hair Studio">
+  <meta name="twitter:description" content="How Cedar &amp; Sage Hair Studio handles personal information in connection with this website.">
+  <meta name="twitter:image" content="images/hero.jpg">
+  <link rel="icon" href="favicon.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <style>
+:root {
+  --cedar: #5a3e2b;
+  --sage: #7c8f78;
+  --sage-dark: #4b5e48;
+  --cream: #f7f3ec;
+  --band: #ebe5d8;
+  --ink: #2a2622;
+  --muted: #5b544c;
+  --line: #ddd5c6;
+  --gold: #f6b814;
+  --s1: .5rem; --s2: 1rem; --s3: 1.5rem; --s4: 2.5rem; --s5: 4rem;
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --serif: Georgia, "Times New Roman", serif;
+  --ease: cubic-bezier(.22,.8,.24,1);
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 5rem; }
+html, body { overflow-x: clip; }
+body { margin: 0; background: var(--cream); color: var(--ink); font: 1.0625rem/1.7 var(--sans); -webkit-font-smoothing: antialiased; }
+body.no-scroll { overflow: hidden; }
+.wrap { max-width: 64rem; margin: 0 auto; padding: 0 var(--s3); }
+a { color: var(--sage-dark); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--cedar); outline-offset: 2px; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: var(--s2); top: var(--s1); background: #fff; padding: var(--s1); z-index: 50; }
+h1, h2, h3, .brand, blockquote { font-family: var(--serif); }
+h1 { font-size: clamp(2.4rem, 7vw, 4.25rem); line-height: 1.08; letter-spacing: -.02em; color: var(--cedar); margin: var(--s2) 0; }
+h2 { font-size: clamp(1.75rem, 4vw, 2.4rem); letter-spacing: -.01em; color: var(--cedar); margin: 0 0 var(--s3); }
+h2::after { content: ""; display: block; width: 3rem; height: 3px; margin-top: .75rem; background: var(--sage); border-radius: 2px; }
+h3 { margin: 0 0 var(--s1); color: var(--sage-dark); }
+p { margin: 0 0 var(--s2); }
+.eyebrow { margin: 0; text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; font-weight: 600; color: var(--sage-dark); }
+.lead { font-size: 1.3rem; color: #4a433c; max-width: 36rem; }
+
+/* Buttons: square-ish, flat, 4px corners */
+.button { display: inline-block; background: var(--sage-dark); color: #fff; padding: .8rem 1.6rem; border-radius: 4px; text-decoration: none; font-weight: 600; border: 2px solid var(--sage-dark); line-height: 1.2; }
+.button:hover { background: var(--cedar); border-color: var(--cedar); }
+.button.ghost { background: transparent; color: var(--sage-dark); }
+.button.ghost:hover { background: var(--sage-dark); color: #fff; border-color: var(--sage-dark); }
+.button.small { padding: .55rem 1.1rem; font-size: .95rem; }
+
+/* Header */
+.top-bar { position: sticky; top: 0; z-index: 30; background: rgba(247,243,236,.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(90,62,43,.08); transition: box-shadow .3s ease; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: var(--s2); padding-top: .85rem; padding-bottom: .85rem; transition: padding .3s ease; }
+.top-bar.scrolled { box-shadow: 0 .4rem 1.2rem rgba(42,38,34,.1); }
+.top-bar.scrolled .top { padding-top: .4rem; padding-bottom: .4rem; }
+.brand { font-size: 1.3rem; font-weight: 700; color: var(--cedar); text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
+.brand span { color: var(--sage-dark); font-weight: 400; }
+.top-links { display: flex; gap: var(--s3); margin-left: auto; }
+.top-links a { position: relative; padding-bottom: .15rem; font-size: .95rem; font-weight: 500; color: var(--ink); text-decoration: none; }
+.top-links a::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: var(--sage); transform: scaleX(0); transform-origin: left; transition: transform .45s var(--ease); }
+.top-links a:hover::after, .top-links a:focus-visible::after, .top-links a[aria-current]::after { transform: scaleX(1); }
+.top-links a[aria-current] { color: var(--cedar); }
+
+/* Hero */
+.hero { position: relative; padding-top: var(--s5); padding-bottom: calc(var(--s5) + 1rem); display: grid; gap: var(--s5); align-items: center; }
+.cta { display: flex; flex-wrap: wrap; gap: var(--s2); margin-top: var(--s3); }
+.open-now { margin: var(--s2) 0 0; font-size: .95rem; font-weight: 600; color: var(--muted); }
+.open-now::before { content: ""; display: inline-block; width: .6rem; height: .6rem; border-radius: 50%; background: #b3a99a; margin-right: .5rem; }
+.open-now.is-open { color: var(--sage-dark); }
+.open-now.is-open::before { background: #4f9a5b; }
+.frame { position: relative; }
+.frame img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 60% 50%; border-radius: 14rem 14rem 1.5rem 1.5rem; box-shadow: 0 1.5rem 3rem rgba(42,38,34,.18); }
+.leaf { position: absolute; z-index: -1; border-radius: 0 100% 0 100%; background: var(--sage); opacity: .35; }
+.leaf.l1 { width: 6rem; height: 6rem; left: -2rem; bottom: 2rem; transform: rotate(-12deg); }
+.leaf.l2 { width: 3.5rem; height: 3.5rem; right: -1rem; top: 1rem; transform: rotate(35deg); background: var(--cedar); opacity: .22; }
+@media (min-width: 48rem) { .hero { grid-template-columns: 1.1fr 1fr; } }
+
+/* Sections */
+.block { padding-top: var(--s5); padding-bottom: var(--s5); }
+.band { background: var(--band); padding: var(--s5) 0; }
+.about p { max-width: 38rem; }
+.about a { font-weight: 600; }
+
+/* Services menu */
+.menu-group + .menu-group { margin-top: var(--s4); }
+.group-label { display: flex; align-items: baseline; gap: .75rem; margin: 0 0 var(--s2); font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .16em; color: var(--sage-dark); border-bottom: 1px solid var(--line); padding-bottom: .6rem; }
+.group-label .num { font-family: var(--serif); font-size: 1.1rem; letter-spacing: .08em; color: var(--sage); }
+.menu { list-style: none; margin: 0; padding: 0; max-width: 46rem; }
+.menu-item { display: grid; grid-template-columns: auto 1fr auto; grid-template-areas: "name dots price" "desc desc desc"; column-gap: .6rem; padding: .7rem 0; }
+.item-name { grid-area: name; font-family: var(--serif); font-size: 1.15rem; color: var(--cedar); font-weight: 700; }
+.item-dots { grid-area: dots; align-self: end; margin-bottom: .45rem; border-bottom: 2px dotted #b9ad98; min-width: 1rem; }
+.item-price { grid-area: price; font-weight: 600; color: var(--sage-dark); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.item-desc { grid-area: desc; margin: .1rem 0 0; font-size: .95rem; color: var(--muted); }
+@media (max-width: 36rem) {
+  .menu-item { grid-template-columns: 1fr; grid-template-areas: "name" "desc" "price"; row-gap: .1rem; border-bottom: 1px solid var(--line); padding: var(--s2) 0; }
+  .item-dots { display: none; }
+}
+
+/* Gallery */
+.gallery { display: grid; gap: var(--s2); grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 40rem) { .gallery { grid-template-columns: repeat(2, 1fr); gap: var(--s1); } }
+.tile { display: block; position: relative; padding: 0; border: 0; background: var(--line); border-radius: .75rem; overflow: hidden; cursor: pointer; aspect-ratio: 4 / 3; }
+.tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s var(--ease); }
+@media (hover: hover) { .tile:hover img { transform: scale(1.06); } }
+.gallery-note { margin: var(--s2) 0 0; font-size: .85rem; color: var(--muted); }
+
+/* Lightbox */
+.lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(28,24,20,.94); display: grid; grid-template-rows: 1fr auto; padding: var(--s2); }
+.lightbox[hidden] { display: none; }
+.lb-stage { display: grid; place-items: center; min-height: 0; }
+.lb-img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; border-radius: 4px; }
+.lb-bar { display: flex; align-items: center; justify-content: space-between; gap: var(--s2); color: #f2ece0; padding: var(--s2) 0 0; font-size: .9rem; }
+.lb-cap { flex: 1; }
+.lb-btn { background: transparent; border: 2px solid rgba(255,255,255,.6); color: #fff; border-radius: 4px; padding: .5rem 1rem; font: inherit; cursor: pointer; }
+.lb-btn:hover { background: rgba(255,255,255,.14); }
+.lb-close { position: absolute; top: var(--s2); right: var(--s2); }
+.lb-arrow { position: absolute; top: 50%; translate: 0 -50%; padding: .9rem 1rem; font-size: 1.1rem; line-height: 1; }
+.lb-prev { left: var(--s2); }
+.lb-next { right: var(--s2); }
+
+/* Reviews */
+.reviews-feature { padding: 6rem var(--s3); text-align: center; }
+.reviews-inner { max-width: 50rem; margin: 0 auto; }
+.reviews-feature h2::after { margin-left: auto; margin-right: auto; }
+.rating-stars { --star: 56px; display: flex; justify-content: center; gap: .4rem; margin: var(--s4) 0 var(--s2); }
+.star { position: relative; display: block; width: var(--star); height: var(--star); }
+.star svg { display: block; width: var(--star); height: var(--star); }
+.star-base { fill: none; stroke: #cfc8bb; stroke-width: 1.5; stroke-linejoin: round; }
+.star-fill { position: absolute; left: 0; top: 0; height: 100%; width: 100%; overflow: hidden; }
+.star-fill svg { fill: var(--sage); }
+.rating-number { display: block; font-family: Fraunces, var(--serif); font-size: 72px; line-height: 1.1; font-weight: 600; color: var(--cedar); font-variant-numeric: tabular-nums; }
+.rating-from { margin: 0 0 var(--s4); font-size: .95rem; color: var(--muted); }
+.review-quote { margin: 0 auto; max-width: 40rem; }
+.review-quote blockquote { margin: 0 0 var(--s2); font-family: Fraunces, var(--serif); font-size: 22px; font-style: italic; line-height: 1.55; color: var(--cedar); }
+.review-quote figcaption { font-size: .9rem; font-weight: 600; letter-spacing: .04em; color: var(--muted); }
+@media (max-width: 40rem) { .reviews-feature { padding: 4rem var(--s2); } .rating-stars { --star: 40px; gap: .25rem; } .rating-number { font-size: 56px; } .review-quote blockquote { font-size: 20px; } }
+
+/* Visit */
+.visit { display: grid; gap: var(--s4); }
+@media (min-width: 48rem) { .visit { grid-template-columns: 1fr 1fr; } }
+address { font-style: normal; margin-bottom: var(--s2); }
+.hours { width: 100%; max-width: 28rem; border-collapse: collapse; background: #fff; border-radius: 1.25rem; box-shadow: 0 1rem 2.25rem rgba(42,38,34,.07); }
+.hours th, .hours td { text-align: left; padding: .55rem var(--s2); border-bottom: 1px solid var(--line); font-weight: 400; }
+.hours th { font-weight: 700; }
+.hours tr:last-child th, .hours tr:last-child td { border-bottom: 0; }
+.social-links a { margin-right: var(--s3); font-weight: 600; }
+
+/* FAQ */
+.faq { max-width: 46rem; }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { cursor: pointer; list-style: none; padding: var(--s2) 2rem var(--s2) 0; font-family: var(--serif); font-size: 1.15rem; font-weight: 700; color: var(--cedar); position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: .25rem; top: 50%; translate: 0 -50%; font: 1.5rem/1 var(--sans); color: var(--sage-dark); }
+.faq details[open] summary::after { content: "\2212"; }
+.faq details p { padding-bottom: var(--s2); max-width: 38rem; }
+
+/* Instagram strip */
+.insta { background: var(--band); padding: var(--s5) 0; }
+.insta-grid { display: grid; gap: var(--s1); grid-template-columns: repeat(4, 1fr); }
+.insta-grid .tile { aspect-ratio: 1; border-radius: .5rem; }
+@media (max-width: 36rem) { .insta-grid { grid-template-columns: repeat(2, 1fr); } }
+.insta p a { font-weight: 600; }
+
+.logo-band { background: #2c2b31; display: grid; place-items: center; padding: var(--s5) var(--s2); }
+.logo-band img { width: min(100%, 30rem); height: auto; border-radius: .5rem; }
+.foot { padding-top: var(--s4); padding-bottom: var(--s4); font-size: .9rem; color: var(--muted); text-align: center; }
+.foot p { margin: 0 0 .4rem; }
+
+/* Mobile bottom bar (phones only) */
+.mobile-bar { display: none; }
+@media (max-width: 40rem) {
+  .top-links { display: none; }
+  .brand { font-size: 1.1rem; }
+  .hero { padding-top: var(--s4); gap: var(--s4); }
+  body { padding-bottom: 4.5rem; }
+  .mobile-bar { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s1); position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; padding: .6rem .75rem calc(.6rem + env(safe-area-inset-bottom)); background: rgba(247,243,236,.97); border-top: 1px solid var(--line); box-shadow: 0 -.4rem 1.2rem rgba(42,38,34,.1); transition: transform .35s var(--ease); }
+  .mobile-bar.is-hidden { transform: translateY(110%); }
+  .mobile-bar .button { text-align: center; }
+}
+
+/* Motion: gentle, switched off for people who ask for less motion */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  @keyframes rise { from { opacity: 0; transform: translateY(1.25rem); } to { opacity: 1; transform: none; } }
+  .hero-text > * { animation: rise .9s var(--ease) both; }
+  .hero-text > :nth-child(2) { animation-delay: .1s; }
+  .hero-text > :nth-child(3) { animation-delay: .2s; }
+  .hero-text > :nth-child(4) { animation-delay: .3s; }
+  .hero-text > :nth-child(5) { animation-delay: .4s; }
+  .frame img { animation: rise 1.2s var(--ease) .15s both; }
+  .button { transition: background-color .3s ease, color .3s ease, border-color .3s ease; }
+}
+
+/* Legal pages, 404 and footer links */
+.legal { max-width: 46rem; padding-top: var(--s5); padding-bottom: var(--s5); }
+.legal h1 { font-size: clamp(2rem, 5vw, 3rem); margin-top: 0; }
+.legal h2 { font-size: 1.4rem; margin: var(--s4) 0 var(--s1); }
+.legal h2::after { display: none; }
+.legal ul { padding-left: 1.25rem; margin: 0 0 var(--s2); }
+.legal li { margin-bottom: .4rem; }
+.legal .updated { color: var(--muted); font-size: .95rem; }
+.notfound { text-align: center; padding-top: var(--s5); padding-bottom: calc(var(--s5) * 1.5); }
+.notfound .cta { justify-content: center; }
+.foot-links a { margin: 0 .6rem; }
+</style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top-bar"><div class="top wrap">
+    <a class="brand" href="index.html">Cedar &amp; Sage <span>Hair Studio</span></a>
+    <nav class="top-links" aria-label="Main">
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#visit">Visit</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <a class="button small" data-site-href="phoneLink" href="tel:+61269211513">Call to Book</a>
+  </div></header>
+
+  <main id="main">
+    <article class="legal wrap">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: October 2026</p>
+      <p>This policy explains how <span data-site="name">Cedar &amp; Sage Hair Studio</span> handles personal information in connection with this website. We have written it in plain language so you can see exactly what happens.</p>
+      <p>Most small businesses with an annual turnover of $3 million or less are exempt from the Privacy Act 1988 (Cth). We do not claim that the Act or the Australian Privacy Principles apply to the salon. We still look after your personal information carefully, in the spirit of those principles.</p>
+
+      <h2>What this website collects</h2>
+      <p>Nothing directly. This website has no contact form, no online booking, no accounts and no newsletter sign-up, and it does not ask you to type in any personal information. It does not use analytics.</p>
+
+      <h2>Hosting and server logs</h2>
+      <p>This website is hosted by Cloudflare. Like most web hosts, Cloudflare automatically records technical information when a page is requested, such as your IP address, the type of browser you use, the page you asked for, and the date and time. Cloudflare operates servers in many countries, so these logs may be handled outside Australia. The salon does not use this information to identify or track individual visitors.</p>
+
+      <h2>Cookies</h2>
+      <p>This website does not use cookies to track you, and it does not use advertising cookies.</p>
+
+      <h2>Information you give the salon</h2>
+      <p>If you contact the salon by phone, or by message on Facebook or Instagram, you may give us personal information such as your name, your phone number and the service you would like. We use it only to respond to you and to manage your booking.</p>
+      <p>Facebook and Instagram are run by other companies, and messages you send there are also handled under their own privacy policies. The salon does not control those platforms.</p>
+
+      <h2>We do not sell personal information</h2>
+      <p>The salon does not sell or rent personal information to anyone.</p>
+
+      <h2>Asking about your information</h2>
+      <p>You can ask us what personal information we hold about you, ask us to correct it, or ask us to delete it. Call the salon on <a data-site="phoneDisplay" data-site-href="phoneLink" href="tel:+61269211513">(02) 6921 1513</a> and we will help.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>If we change how this website handles personal information, we will update this page and the date at the top.</p>
+    </article>
+  </main>
+
+  <footer class="foot wrap">
+    <p id="foot-hours"></p>
+    <p id="foot-abn" hidden></p>
+    <p>&copy; <span id="foot-year">2026</span> <span data-site="name">Cedar &amp; Sage Hair Studio</span>, <span data-site="address">135 Docker St, Wagga Wagga NSW 2650</span>.</p>
+    <p class="foot-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -5,8 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cedar &amp; Sage Hair Studio | Hair salon in Wagga Wagga</title>
   <meta name="description" content="Cedar &amp; Sage Hair Studio, a relaxing hair salon in central Wagga Wagga. 135 Docker St, Wagga Wagga NSW 2650.">
-  <!-- Remove this line when the owner approves the site and it goes live. -->
+  <!-- DEMO ONLY: remove this line when the site launches on the salon's own domain -->
   <meta name="robots" content="noindex, nofollow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cedar &amp; Sage Hair Studio">
+  <meta property="og:title" content="Cedar &amp; Sage Hair Studio | Hair salon in Wagga Wagga">
+  <meta property="og:description" content="Cedar &amp; Sage Hair Studio, a relaxing hair salon in central Wagga Wagga. 135 Docker St, Wagga Wagga NSW 2650.">
+  <meta property="og:image" content="images/hero.jpg">
+  <meta property="og:image:alt" content="A stylist blow drying a client's wavy hair with a round brush">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cedar &amp; Sage Hair Studio | Hair salon in Wagga Wagga">
+  <meta name="twitter:description" content="Cedar &amp; Sage Hair Studio, a relaxing hair salon in central Wagga Wagga. 135 Docker St, Wagga Wagga NSW 2650.">
+  <meta name="twitter:image" content="images/hero.jpg">
   <link rel="icon" href="favicon.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <style>
@@ -193,6 +203,18 @@ address { font-style: normal; margin-bottom: var(--s2); }
   .frame img { animation: rise 1.2s var(--ease) .15s both; }
   .button { transition: background-color .3s ease, color .3s ease, border-color .3s ease; }
 }
+
+/* Legal pages, 404 and footer links */
+.legal { max-width: 46rem; padding-top: var(--s5); padding-bottom: var(--s5); }
+.legal h1 { font-size: clamp(2rem, 5vw, 3rem); margin-top: 0; }
+.legal h2 { font-size: 1.4rem; margin: var(--s4) 0 var(--s1); }
+.legal h2::after { display: none; }
+.legal ul { padding-left: 1.25rem; margin: 0 0 var(--s2); }
+.legal li { margin-bottom: .4rem; }
+.legal .updated { color: var(--muted); font-size: .95rem; }
+.notfound { text-align: center; padding-top: var(--s5); padding-bottom: calc(var(--s5) * 1.5); }
+.notfound .cta { justify-content: center; }
+.foot-links a { margin: 0 .6rem; }
 </style>
   <script type="application/ld+json">
   {
@@ -336,7 +358,9 @@ address { font-style: normal; margin-bottom: var(--s2); }
 
   <footer class="foot wrap">
     <p id="foot-hours"></p>
-    <p>&copy; Cedar &amp; Sage Hair Studio, <span data-site="address">135 Docker St, Wagga Wagga NSW 2650</span>.</p>
+    <p id="foot-abn" hidden></p>
+    <p>&copy; <span id="foot-year">2026</span> <span data-site="name">Cedar &amp; Sage Hair Studio</span>, <span data-site="address">135 Docker St, Wagga Wagga NSW 2650</span>.</p>
+    <p class="foot-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></p>
   </footer>
 
   <div class="mobile-bar">

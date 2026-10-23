@@ -1,6 +1,6 @@
 # Cedar & Sage Hair Studio
 
-Static site (a single `index.html` with inline CSS, no build step, no JavaScript, no third-party requests).
+Static site (a single `index.html` with inline CSS, no build step, one small inline script for the rating animation, no third-party requests).
 Deploy the repo root to Cloudflare Pages with no build command.
 
 ## Facts used (from the owner)
@@ -14,4 +14,4 @@ Deploy the repo root to Cloudflare Pages with no build command.
 - Photos (with alt text), once the owner supplies them
 - Remove the `noindex` meta tag in `index.html` before launch
 - Turn on Always Use HTTPS in Cloudflare after connecting the domain
-- If you edit the CSS in `index.html`, update the `style-src` sha256 hash in `_headers` to match (the CSP blocks inline styles otherwise)
+- If you edit the CSS in `index.html`, update the `style-src` sha256 hash in `_headers` to match (same for the inline script and `script-src`) (the CSP blocks inline styles otherwise)

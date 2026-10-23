@@ -42,7 +42,7 @@
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#visit">Visit</a>
-      <a href="reviews.html">Reviews</a>
+      <a href="#reviews">Reviews</a>
     </nav>
   </div></header>
 
@@ -87,10 +87,10 @@
       <p class="note"><span class="ph">[Replace these example headings with the salon's real service list and prices.]</span></p>
     </section>
 
-    <!-- Rating section is hidden until the real Google rating and review count are set in styles.css (.reviews-home) and the hidden attribute is removed. -->
-    <section id="reviews" class="wrap block reviews-home" hidden>
+        <section id="reviews" class="wrap block reviews-home">
       <h2>What our clients say</h2>
-      <div class="rating">
+      <!-- Rating block is hidden until the real Google rating and review count are set in styles.css (.reviews-home) and the hidden attribute is removed. -->
+      <div class="rating" hidden>
         <div class="stars" role="img" aria-label="Google star rating">
           <span class="stars-back" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
           <span class="stars-fill" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -98,7 +98,12 @@
         <p class="score"><span class="num-rating"></span> out of 5 on Google<br>
           from <span class="num-count"></span> reviews</p>
       </div>
-      <p><a href="reviews.html">Read what clients say</a></p>
+      <ul class="cards reviews">
+        <li><blockquote class="ph">[Review text, copied word for word from the client's own review]</blockquote><p class="who ph">[Client first name, and where the review was posted]</p></li>
+        <li><blockquote class="ph">[Review text]</blockquote><p class="who ph">[Client first name, and where the review was posted]</p></li>
+        <li><blockquote class="ph">[Review text]</blockquote><p class="who ph">[Client first name, and where the review was posted]</p></li>
+      </ul>
+      <p class="note"><span class="ph">[Only add reviews clients have really written, with their OK. Link to the salon's Google reviews once confirmed.]</span></p>
     </section>
 
     <section id="visit" class="wrap block">

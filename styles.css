@@ -142,3 +142,5 @@ h2::after { content: ""; display: block; width: 3rem; height: 3px; margin-top: .
     .frame img.photo { animation: drift 1.4s var(--ease) .15s both, zoom 2.4s var(--ease) .15s both; }
   }
 }
+html, body { overflow-x: clip; }
+.button::after { margin-left: .25rem; }

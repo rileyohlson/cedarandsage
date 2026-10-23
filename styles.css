@@ -70,3 +70,34 @@ address { font-style: normal; }
 .page-head { border-top: 0; padding-bottom: var(--s2); }
 blockquote { margin: 0 0 var(--s2); font-size: 1.1rem; font-style: italic; }
 .who { font-size: .9rem; color: #5b544c; }
+
+/* Google rating. Change --rating-whole, --rating-tenth and --review-count to match the Google listing. */
+@property --w { syntax: "<integer>"; initial-value: 0; inherits: false; }
+@property --t { syntax: "<integer>"; initial-value: 0; inherits: false; }
+@property --c { syntax: "<integer>"; initial-value: 0; inherits: false; }
+@property --fill { syntax: "<percentage>"; initial-value: 0%; inherits: false; }
+.reviews-home { --rating-whole: 0; --rating-tenth: 0; --review-count: 0; }
+.rating { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3); margin-bottom: var(--s2); }
+.stars { position: relative; font-size: 2.5rem; line-height: 1; letter-spacing: .1em; }
+.stars-back { color: #d8d0c0; }
+.stars-fill { position: absolute; left: 0; top: 0; color: #c9a24a; white-space: nowrap; overflow: hidden; width: calc(var(--rating-whole) * 20% + var(--rating-tenth) * 2%); }
+.score { margin: 0; }
+.num-rating, .num-count { font-weight: 700; font-size: 1.5rem; color: var(--cedar); }
+.num-rating::before { content: var(--rating-whole) "." var(--rating-tenth); }
+.num-count::before { content: var(--review-count); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    @keyframes fillstars { from { width: 0; } }
+    @keyframes countrating { from { --w: 0; --t: 0; } }
+    @keyframes countreviews { from { --c: 0; } }
+    .stars-fill { animation: fillstars linear both; animation-timeline: view(); animation-range: entry 10% entry 80%; }
+    .num-rating { --w: var(--rating-whole); --t: var(--rating-tenth); animation: countrating linear both; animation-timeline: view(); animation-range: entry 10% entry 80%; }
+    .num-rating::before { content: counter(w) "." counter(t); counter-reset: w var(--w) t var(--t); }
+    .num-count { --c: var(--review-count); animation: countreviews linear both; animation-timeline: view(); animation-range: entry 10% entry 80%; }
+    .num-count::before { content: counter(c); counter-reset: c var(--c); }
+  }
+}
+
+img.photo { width: 100%; height: auto; object-fit: cover; border-style: solid; border-width: 0; }
+img.photo.tall { aspect-ratio: 3 / 4; max-height: 28rem; }

@@ -67,7 +67,6 @@ const SITE = {
   // "alt" describes the photo for people who cannot see it. To swap or add a photo,
   // upload the file to the images folder and add a line, for example:
   //   { src: 'images/my-photo.jpg', alt: 'A short description of what the photo shows' },
-  // The Instagram strip uses the first four photos in this list.
   gallery: [
     { src: 'images/gallery-colour-tint.jpg', alt: 'Two stylists in gloves painting colour onto a client\'s hair with tint brushes' },
     { src: 'images/gallery-colour-foils.jpg', alt: 'A stylist brushing colour onto foil-wrapped sections of long dark hair' },
@@ -230,17 +229,6 @@ const SITE = {
         b.appendChild(img);
         b.addEventListener('click', function () { openBox(i, b); });
         grid.appendChild(b);
-      });
-    }
-    var strip = $('#insta-grid');
-    if (strip) {
-      SITE.gallery.slice(0, 4).forEach(function (g) {
-        var a = el('a', 'tile');
-        a.href = SITE.social.instagram; a.target = '_blank'; a.rel = 'noopener';
-        a.setAttribute('aria-label', 'View photos on Instagram: ' + g.alt);
-        var img = el('img'); img.src = g.src; img.alt = ''; img.loading = 'lazy'; img.width = 700; img.height = 525;
-        a.appendChild(img);
-        strip.appendChild(a);
       });
     }
   }

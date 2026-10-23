@@ -101,3 +101,44 @@ blockquote { margin: 0 0 var(--s2); font-size: 1.1rem; font-style: italic; }
 
 img.photo { width: 100%; height: auto; object-fit: cover; border-style: solid; border-width: 0; }
 img.photo.tall { aspect-ratio: 3 / 4; max-height: 28rem; }
+
+/* Polish: sticky header, layered hero, richer motion */
+.top-bar { position: sticky; top: 0; z-index: 10; background: rgba(247,243,236,.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(90,62,43,.08); }
+.top-bar .top { padding-top: .75rem; padding-bottom: .75rem; }
+.top-links a { position: relative; padding-bottom: .15rem; }
+.top-links a::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: var(--sage); transform: scaleX(0); transform-origin: left; }
+.hero { position: relative; }
+.hero::before { content: ""; position: absolute; z-index: -1; width: 28rem; height: 28rem; right: -8rem; top: -6rem; border-radius: 50%; background: radial-gradient(circle, rgba(124,143,120,.28), transparent 70%); }
+.frame { position: relative; }
+.frame img.photo { display: block; box-shadow: 0 1.5rem 3rem rgba(42,38,34,.18); }
+.leaf { position: absolute; z-index: -1; border-radius: 0 100% 0 100%; background: var(--sage); opacity: .35; }
+.leaf.l1 { width: 6rem; height: 6rem; left: -2rem; bottom: 2rem; transform: rotate(-12deg); }
+.leaf.l2 { width: 3.5rem; height: 3.5rem; right: -1rem; top: 1rem; transform: rotate(35deg); background: var(--cedar); opacity: .22; }
+h2 { position: relative; padding-bottom: .5rem; }
+h2::after { content: ""; display: block; width: 3rem; height: 3px; margin-top: .5rem; background: var(--sage); border-radius: 2px; }
+.cards li { box-shadow: 0 .25rem 1rem rgba(42,38,34,.05); }
+@media (prefers-reduced-motion: no-preference) {
+  :root { --ease: cubic-bezier(.22,.8,.24,1); }
+  @keyframes zoom { from { transform: scale(1.12); } to { transform: scale(1); } }
+  @keyframes floaty { 0%,100% { translate: 0 0; } 50% { translate: 0 -.6rem; } }
+  @keyframes grow { from { width: 0; } }
+  .frame { overflow: visible; }
+  .frame img.photo { animation: drift 1.4s var(--ease) .15s both, zoom 2.4s var(--ease) .15s both; }
+  .leaf.l1 { animation: floaty 7s ease-in-out infinite; }
+  .leaf.l2 { animation: floaty 9s ease-in-out -3s infinite; }
+  .top-links a::after { transition: transform .45s var(--ease); }
+  .top-links a:hover::after, .top-links a:focus-visible::after { transform: scaleX(1); }
+  .button, .cards li, .photo { transition-timing-function: var(--ease); transition-duration: .5s; }
+  .cards li:nth-child(2) { animation-delay: .08s; }
+  .cards li:nth-child(3) { animation-delay: .16s; }
+  .gallery .photo:nth-child(2) { animation-delay: .06s; }
+  .gallery .photo:nth-child(3) { animation-delay: .12s; }
+  .gallery .photo:nth-child(4) { animation-delay: .18s; }
+  h2::after { transition: width .6s var(--ease); }
+  .button::after { content: " \2192"; display: inline-block; transition: transform .4s var(--ease); }
+  .button:hover::after { transform: translateX(.3rem); }
+  @supports (animation-timeline: view()) {
+    h2::after { animation: grow linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; }
+    .frame img.photo { animation: drift 1.4s var(--ease) .15s both, zoom 2.4s var(--ease) .15s both; }
+  }
+}

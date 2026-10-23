@@ -22,6 +22,11 @@ const SITE = {
     instagramHandle: '@cedar_sage_hair'
   },
 
+  // Google rating shown in the "What our clients say" section. Change these two numbers
+  // to match the salon's Google listing. rating can have one decimal, for example 4.5.
+  rating: 5.0,
+  reviewCount: 1,
+
   // Opening hours drive the Visit table, the footer summary and the "Open now" text.
   // Times are 24 hour: '15:00' means 3:00pm. Use null for a day the salon is closed.
   // Example: to open Mondays 10am to 2pm, change  monday: null  to
@@ -310,6 +315,49 @@ const SITE = {
     }
   }
 
+  /* ---- Review rating: stars fill one by one and the number counts up, once ---- */
+  function setupRating() {
+    var sec = $('#reviews');
+    if (!sec) return;
+    var rating = Math.max(0, Math.min(5, Number(SITE.rating) || 0));
+    var count = Number(SITE.reviewCount) || 0;
+    var num = $('.rating-number', sec), from = $('.rating-from', sec), fills = $$('.star-fill', sec);
+    var finalText = rating.toFixed(1);
+    num.textContent = finalText;
+    num.setAttribute('aria-label', 'Rated ' + finalText + ' out of 5');
+    from.textContent = 'from ' + count + ' Google review' + (count === 1 ? '' : 's');
+    var target = fills.map(function (f, i) { return Math.max(0, Math.min(1, rating - i)); });
+    var setFill = function (i, p) { fills[i].style.width = (p * 100) + '%'; };
+    var showFinal = function () { target.forEach(function (t, i) { setFill(i, t); }); num.textContent = finalText; };
+
+    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) { showFinal(); return; }
+
+    var STAR_MS = 300, STAGGER_MS = 150, COUNT_MS = 1200;
+    var ease = function (t) { return 1 - Math.pow(1 - t, 3); };
+    fills.forEach(function (f, i) { setFill(i, 0); });
+    num.textContent = (0).toFixed(1);
+
+    var io = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      io.disconnect();
+      var start = null;
+      requestAnimationFrame(function tick(now) {
+        if (start === null) start = now;
+        var t = now - start;
+        fills.forEach(function (f, i) {
+          var p = Math.max(0, Math.min(1, (t - i * STAGGER_MS) / STAR_MS));
+          setFill(i, target[i] * ease(p));
+        });
+        var c = Math.min(1, t / COUNT_MS);
+        num.textContent = (rating * ease(c)).toFixed(1);
+        if (t < Math.max(COUNT_MS, 4 * STAGGER_MS + STAR_MS)) requestAnimationFrame(tick);
+        else showFinal();
+      });
+    }, { threshold: 0.4 });
+    io.observe(sec);
+  }
+
   /* ---- Scroll reveal (GSAP), once only, skipped for reduced motion ---- */
   function setupReveal() {
     if (!window.gsap || !window.ScrollTrigger) return;
@@ -324,6 +372,7 @@ const SITE = {
   }
 
   bindDetails();
+  setupRating();
   renderServices();
   renderHours();
   renderGallery();

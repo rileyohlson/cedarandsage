@@ -9,7 +9,7 @@ Deploy the repo root to Cloudflare Pages with no build command.
 - Address: 135 Docker St, Wagga Wagga NSW 2650
 
 ## Still to fill in (yellow `[brackets]` on the page)
-- About text, real services and prices, opening hours, phone or booking link
+- About text, real services and prices, booking link, and real reviews on `reviews.html` (placeholders only; never invent reviews)
 - Photos (with alt text), once the owner supplies them
 - Remove the `noindex` meta tag in `index.html` before launch
 - Turn on Always Use HTTPS in Cloudflare after connecting the domain

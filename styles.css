@@ -66,3 +66,7 @@ address { font-style: normal; }
 .hours { border-collapse: collapse; margin-top: var(--s1); }
 .hours th, .hours td { text-align: left; padding: .35rem var(--s3) .35rem 0; border-bottom: 1px solid #ddd5c6; font-weight: 400; }
 .hours th { font-weight: 700; }
+
+.page-head { border-top: 0; padding-bottom: var(--s2); }
+blockquote { margin: 0 0 var(--s2); font-size: 1.1rem; font-style: italic; }
+.who { font-size: .9rem; color: #5b544c; }

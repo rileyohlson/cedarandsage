@@ -151,3 +151,4 @@ html, body { overflow-x: clip; }
   @keyframes fadein { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: none; } }
   @supports (animation-timeline: view()) { .logo-band img { animation: fadein linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; } }
 }
+img.photo.tall { image-rendering: auto; }

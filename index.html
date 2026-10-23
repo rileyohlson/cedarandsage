@@ -14,6 +14,13 @@
     "@context": "https://schema.org",
     "@type": "HairSalon",
     "name": "Cedar & Sage Hair Studio",
+    "telephone": "+61269211513",
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday"], "opens": "09:00", "closes": "15:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "09:30", "closes": "20:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "17:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00"}
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "135 Docker St",
@@ -86,8 +93,17 @@
         Wagga Wagga NSW 2650
       </address>
       <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Cedar+%26+Sage+Hair+Studio+135+Docker+St+Wagga+Wagga+NSW+2650">Get directions</a></p>
-      <p><strong>Hours:</strong> <span class="ph">[Opening hours]</span><br>
-         <strong>Bookings:</strong> <span class="ph">[Phone number or booking link]</span></p>
+      <p><strong>Phone:</strong> <a href="tel:+61269211513">(02) 6921 1513</a></p>
+      <h3>Opening hours</h3>
+      <table class="hours">
+        <tr><th scope="row">Monday</th><td>Closed</td></tr>
+        <tr><th scope="row">Tuesday</th><td>9:00am to 3:00pm</td></tr>
+        <tr><th scope="row">Wednesday</th><td>9:00am to 3:00pm</td></tr>
+        <tr><th scope="row">Thursday</th><td>9:30am to 8:00pm</td></tr>
+        <tr><th scope="row">Friday</th><td>9:00am to 5:00pm</td></tr>
+        <tr><th scope="row">Saturday</th><td>9:00am to 1:00pm</td></tr>
+        <tr><th scope="row">Sunday</th><td>Closed</td></tr>
+      </table>
     </section>
   </main>
 

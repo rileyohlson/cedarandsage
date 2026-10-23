@@ -10,6 +10,7 @@ Deploy the repo root to Cloudflare Pages with no build command.
 
 ## Still to fill in (yellow `[brackets]` on the page)
 - About text, real services and prices, booking link, and real reviews on `reviews.html` (placeholders only; never invent reviews)
+- Google rating section on the home page is hidden: set `--rating-whole`, `--rating-tenth`, `--review-count` in `styles.css` (`.reviews-home`), then remove `hidden` in `index.html`
 - Photos (with alt text), once the owner supplies them
 - Remove the `noindex` meta tag in `index.html` before launch
 - Turn on Always Use HTTPS in Cloudflare after connecting the domain

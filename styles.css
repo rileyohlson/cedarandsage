@@ -144,3 +144,10 @@ h2::after { content: ""; display: block; width: 3rem; height: 3px; margin-top: .
 }
 html, body { overflow-x: clip; }
 .button::after { margin-left: .25rem; }
+
+.logo-band { background: #2c2b31; display: grid; place-items: center; padding: var(--s4) var(--s2); }
+.logo-band img { width: min(100%, 30rem); height: auto; border-radius: .5rem; }
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fadein { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: none; } }
+  @supports (animation-timeline: view()) { .logo-band img { animation: fadein linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; } }
+}

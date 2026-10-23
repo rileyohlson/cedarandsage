@@ -1,6 +1,6 @@
 /*
   Strict-Transport-Security: max-age=31536000
-  Content-Security-Policy: default-src 'none'; img-src 'self'; style-src 'sha256-Ydq5DzX1F68g7bcZqjoCyceor83ZLLO4Q48hxe26WP8='; script-src 'sha256-v5s9Wvs5nv3171sQlOQq+2oUYd3hFdo6DmN+ONGvU9c='; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'none'; img-src 'self'; style-src 'sha256-wgVgLrBby1qnx/msnJ4BD50RckCKSZcsFaKqwMq5Jv4='; script-src 'self' https://cdnjs.cloudflare.com; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()

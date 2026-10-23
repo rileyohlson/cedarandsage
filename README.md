@@ -1,17 +1,16 @@
 # Cedar & Sage Hair Studio
 
-Static site (a single `index.html` with inline CSS, no build step, one small inline script for the rating animation, no third-party requests).
-Deploy the repo root to Cloudflare Pages with no build command.
+Static site: `index.html` (page and CSS), `script.js` (all the salon's details plus the page logic), `images/`. No build step. Deploy the repo root to Cloudflare with no build command.
 
-## Facts used (from the owner)
-- Name: Cedar & Sage Hair Studio
-- Description: a relaxing hair salon in central Wagga Wagga
-- Address: 135 Docker St, Wagga Wagga NSW 2650
+## Editing the site
+Open `script.js`. The `SITE` object at the very top holds the phone number, address, social links, opening hours, services with prices, and gallery photos. Everything on the page is built from it, and each part has plain-English comments and an example line.
 
-## Still to fill in (yellow `[brackets]` on the page)
-- About text, real services and prices, booking link, and real reviews on the reviews section of `index.html` (placeholders only; never invent reviews)
-- Google rating (5.0 out of 5 from 1 review) is live; if it changes, update `--rating-whole`, `--rating-tenth`, `--review-count` in `.reviews-home` and the singular "review" in `index.html`
-- Photos (with alt text), once the owner supplies them
-- Remove the `noindex` meta tag in `index.html` before launch
-- Turn on Always Use HTTPS in Cloudflare after connecting the domain
-- If you edit the CSS in `index.html`, update the `style-src` sha256 hash in `_headers` to match (same for the inline script and `script-src`) (the CSP blocks inline styles otherwise)
+## Before it goes live
+- Replace the placeholder prices in `SITE.services` with the salon's real price list.
+- The gallery photos are free stock photos from Unsplash. Swap them for the salon's own work when available.
+- Remove the `noindex` meta tag in `index.html` when the owner approves the site.
+- Turn on Always Use HTTPS in Cloudflare after connecting the domain.
+- The structured data (JSON-LD) in the `<head>` of `index.html` repeats the phone and hours for search engines, so update it if those change.
+
+## Security headers (`_headers`)
+The Content-Security-Policy only allows the exact inline CSS and GSAP scripts from cdnjs.cloudflare.com. If you edit the `<style>` block in `index.html`, update the `style-src` sha256 hash in `_headers` to match, or the page will lose its styling. If you change the GSAP version, update its `integrity` hash in `index.html`.
